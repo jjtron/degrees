@@ -104,6 +104,11 @@ def shortest_path(source, target):
         raise Exception("no solution")
 
     while True:
+        # If nothing left in frontier, then no path
+        if frontier.empty():
+            return None
+            # raise Exception("no solution")
+
         node = frontier.remove()
         actor = node.state[1]
         num_explored += 1
